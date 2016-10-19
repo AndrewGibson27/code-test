@@ -1,0 +1,49 @@
+// font root sizes
+$font-root: 16px;
+$font-root-tablet: 16px;
+$font-root-mobile: 15px;
+
+// font sizes in comparison to root
+$font-xl: 2rem;
+$font-l: 1.5rem;
+$font-m: 1.2rem;
+$font-b: 1.1rem;
+$font-s: .92rem;
+$font-xs: .85rem;
+$font-xxs: .7rem;
+
+// set font root sizes for desktop, tablet, mobile
+html {
+  font-size: $font-root;
+  @media(min-width:320px) {
+    font-size: $font-root-mobile;
+  }
+}
+
+// Set base typography sizes for headers, paragraphs, etc.
+h1 {
+  @media(min-width:320px) {
+    font-size: $font-l;
+  }
+  font-size: $font-xl;
+}
+
+h2 {
+  font-size: $font-l;
+}
+
+h3 {
+  font-size: $font-m;
+}
+
+h4 {
+  font-size: $font-s;
+}
+
+h5 {
+  font-size: $font-xs;
+}
+
+p {
+  font-size: $font-b;
+}
