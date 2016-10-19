@@ -20,6 +20,7 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-open": "~0.2.0",
-    "matchdep": "~0.1.2"
+    "matchdep": "~0.1.2",
+    "sass-mq": "^3.2.9"
   }
 }
