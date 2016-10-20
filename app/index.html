@@ -40,6 +40,79 @@
           <p class="text__para">Our nonprofit newsroom depends on your support!</p>
         </div>
       </div>
+
+      <form class="form" action="" method="post">
+        <p class="form__intro">I would like to give</p>
+        <fieldset class="form__fieldset">
+          <ul class="form__amounts">
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-1">
+              <label class="form__amount-label" for="amount-1">&#36;4</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-2">
+              <label class="form__amount-label" for="amount-2">&#36;9</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-3">
+              <label class="form__amount-label" for="amount-3">&#36;17</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-4">
+              <label class="form__amount-label" for="amount-4">&#36;31</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-5">
+              <label class="form__amount-label" for="amount-5">&#36;63</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-6">
+              <label class="form__amount-label" for="amount-6">&#36;84</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-input" type="text" placeholder="&#36;">
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <ul class="form__frequencies">
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="annual">Annually</button>
+            </li>
+
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="monthly">Monthly</button>
+            </li>
+
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="once">One Time</button>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <div class="form__contact-group">
+            <label class="form__contact-label" for="name">Name</label>
+            <input class="form__contact-input" type="text" id="name">
+          </div>
+
+           <div class="form__contact-group">
+            <label class="form__contact-label" for="email">Email</label>
+            <input class="form__contact-input" type="email" id="email">
+          </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <input class="form__submit" type="submit" id="submit">
+        </fieldset>
+      </form>
     </main>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
