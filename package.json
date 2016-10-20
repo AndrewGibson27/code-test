@@ -23,5 +23,7 @@
     "matchdep": "~0.1.2",
     "sass-mq": "^3.2.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
 }
