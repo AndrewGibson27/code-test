@@ -16,6 +16,11 @@ var lrSnippet = require('connect-livereload')({
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
+var BROWSERS = [
+  'last 2 versions',
+  'IE >= 9',
+  'Android >= 4'
+];
 
 /**
  * Grunt module
@@ -31,7 +36,6 @@ module.exports = function (grunt) {
    * FireShell Grunt config
    */
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
 
     /**
@@ -196,6 +200,37 @@ module.exports = function (grunt) {
           '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
+    },
+
+    postcss: {
+      dev: {
+        options: {
+          map: true,
+          processors: [
+            require('autoprefixer')({
+              browsers: BROWSERS
+            })
+          ]
+        },
+        files: {
+          '<%= project.assets %>/css/style.min.css': '<%= project.assets %>/css/style.min.css'
+        }
+      },
+
+      dist: {
+        options: {
+          map: true,
+          processors: [
+            require('autoprefixer')({
+              browsers: BROWSERS
+            }),
+            require('cssnano')()
+          ]
+        },
+        files: {
+          '<%= project.assets %>/css/style.min.css': '<%= project.assets %>/css/style.min.css'
+        }
+      }
     }
   });
 
@@ -207,6 +242,7 @@ module.exports = function (grunt) {
     'sass:dev',
     'jshint',
     'concat:dev',
+    'postcss:dev',
     'connect:livereload',
     'open',
     'watch'
@@ -220,6 +256,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'sass:dist',
     'jshint',
+    'postcss:dist',
     'uglify'
   ]);
 
