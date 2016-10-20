@@ -68,3 +68,13 @@
   var formModule = formHandler();
   formModule.init();
 })();
+
+
+
+Handlebars.registerHelper('isDefaultSelected', function(index){
+   if (index === 1) {
+      return 'checked';
+   }
+
+   return '';
+});
