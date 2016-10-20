@@ -9,7 +9,8 @@
         once: ['35', '60', '150', '250', '500']
       },
       currentFrequency = 'monthly',
-      currValue = amountsList[currentFrequency][1];
+      currValue = amountsList[currentFrequency][1],
+      selectedRadio = document.getElementById('initial-selection');
 
     var init = function(){
       _bindEvents();
@@ -17,16 +18,23 @@
 
     var _handleSubmit = function(e){
       e.preventDefault();
-      console.log(currValue);
+
+      if ( _submissionIsValid(currValue) ) {
+        console.log(currValue);
+      } else {
+        console.warn('Invalid numeric value. At this point, the user knows he/she is just messing with us. Click it one more time, and you get an error message on the form.');
+        _raiseInvalidError();
+      }
     };
 
-    var _updateAmounts = function(frequency){
+    var _updateAmounts = function(){
       var markup = Handlebars.templates.amounts({
-        amounts: amountsList[frequency]
+        amounts: amountsList[currentFrequency]
       });
 
       handlebarsAttach.innerHTML = markup;
       _handleRadioEvent();
+      currValue = amountsList[currentFrequency][1];
     };
 
     var _handleRadioEvent = function(){
@@ -38,7 +46,21 @@
         } else {
           currValue = $(this).val();
         }
+
+        _storeSelectedRadio($this[0]);
       });
+    };
+
+    var _submissionIsValid = function(currValue){
+      return !isNaN(currValue);
+    };
+
+    var _raiseInvalidError = function(){
+      selectedRadio.setCustomValidity('Please enter a number.');
+    };
+
+    var _storeSelectedRadio = function(el){
+      selectedRadio = el;
     };
 
     var _amountsRemainSame = function(newFrequency, currentFrequency){
@@ -55,7 +77,9 @@
       $('.form__frequency-button').each(function(){
         var $this = $(this);
 
-        $this.click(function(){
+        $this.click(function(e){
+          e.preventDefault();
+
           var newFrequency = $this.attr('data-frequency');
 
           if (newFrequency === currentFrequency) {
@@ -63,11 +87,9 @@
           } else if ( _amountsRemainSame(newFrequency, currentFrequency) ) {
             currentFrequency = newFrequency;
           } else {
-            _updateAmounts(newFrequency);
             currentFrequency = newFrequency;
+            _updateAmounts();
           }
-
-          console.log(currentFrequency);
         });
       });
     };
