@@ -4,7 +4,7 @@
   var formHandler = function(){
     var form = document.getElementById('form'),
       $frequencyButtons = $('.form__frequency-button'),
-      amountLabels = document.querySelectorAll('.form__amount-label'),
+      handlebarsAttach = document.getElementById('amounts-list'),
       amountsList = {
         annual: ['35', '60', '150', '250', '500'],
         monthly: ['4', '9', '17', '31', '63'],
@@ -21,20 +21,21 @@
     };
 
     var _updateAmounts = function(frequency){
-      var newAmounts = amountsList[frequency];
+      var markup = Handlebars.templates.amounts({
+        amounts: amountsList[frequency]
+      });
 
-
-
+      handlebarsAttach.innerHTML = markup;
       currentFrequency = frequency;
     };
 
     var _bindEvents = function(){
       form.onsubmit = _handleSubmit;
 
-      $frequencyButtons.each(function(i){
+      $frequencyButtons.each(function(){
         var $this = $(this);
 
-        $this.click(function(e){
+        $this.click(function(){
           var frequency = $this.attr('data-frequency');
 
           if (frequency === currentFrequency) {
