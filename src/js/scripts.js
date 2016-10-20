@@ -17,6 +17,7 @@
 
     var _handleSubmit = function(e){
       e.preventDefault();
+      console.log(currValue);
     };
 
     var _updateAmounts = function(frequency){
