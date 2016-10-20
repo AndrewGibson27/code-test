@@ -10,7 +10,11 @@
       },
       currentFrequency = 'monthly',
       currValue = amountsList[currentFrequency][1],
-      selectedRadio = document.getElementById('amount-2');
+      donationForm = document.getElementById('form'),
+      formError = document.getElementById('form-error'),
+      selectedRadio = document.getElementById('amount-2'),
+      email = document.getElementById('email'),
+      donatorName = document.getElementById('donator-name');
 
     var init = function(){
       _bindEvents();
@@ -19,11 +23,8 @@
     var _handleSubmit = function(e){
       e.preventDefault();
 
-      if ( _submissionIsValid() ) {
+      if ( _checkFormValidity() ) {
         console.log(currValue);
-      } else {
-        console.warn('Invalid numeric value. At this point, the user knows he/she is just messing with us. Click it one more time, and you get an error message on the form.');
-        _raiseInvalidError();
       }
     };
 
@@ -35,6 +36,7 @@
       handlebarsAttach.innerHTML = markup;
       _handleRadioEvent();
       _handleManualEvents();
+      _storeNewDOMReferences();
     };
 
     var _handleManualEvents = function(){
@@ -66,11 +68,36 @@
       });
     };
 
-    var _submissionIsValid = function(){
-      return !isNaN(currValue) && currValue.trim() !== '';
+    var _checkFormValidity = function(){
+      var errorText = '',
+        valid = true;
+
+      if ( isNaN(currValue) || currValue.trim() === '' ) {
+        errorText += 'Please enter a valid donation amount.';
+        _raiseInvalidAmountError();
+        valid = false;
+      }
+      if ( email.value.trim() === '' || donatorName.value.trim() === '' ) {
+        errorText += ' Please enter a valid name and email address';
+        valid = false;
+      }
+      if (!valid) {
+        _showErrorMessage(errorText);
+      }
+
+      return valid;
     };
 
-    var _raiseInvalidError = function(){
+    var _storeNewDOMReferences = function(){
+      email = document.getElementById('email');
+      name = document.getElementById('donator-name');
+    };
+
+    var _showErrorMessage = function(errorText){
+      formError.innerText = errorText;
+    };
+
+    var _raiseInvalidAmountError = function(){
       selectedRadio.setCustomValidity('Please enter a number.');
     };
 
@@ -89,7 +116,7 @@
     var _bindEvents = function(){
       _handleManualEvents();
       _handleRadioEvent();
-      document.getElementById('form').onsubmit = _handleSubmit;
+      donationForm.onsubmit = _handleSubmit;
 
       $('.form__frequency-button').each(function(){
         var $this = $(this);
