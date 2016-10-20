@@ -2,10 +2,7 @@
   'use strict';
 
   var formHandler = function(){
-    var form = document.getElementById('form'),
-      $frequencyButtons = $('.form__frequency-button'),
-      $radioButtons = $('.form__amount-radio'),
-      handlebarsAttach = document.getElementById('amounts-list'),
+    var handlebarsAttach = document.getElementById('amounts-list'),
       amountsList = {
         annual: ['35', '60', '150', '250', '500'],
         monthly: ['4', '9', '17', '31', '63'],
@@ -32,13 +29,13 @@
     };
 
     var _bindEvents = function(){
-      $radioButtons.click(function(){
+      $('.form__amount-radio').click(function(){
         currValue = $(this).val();
       });
 
-      form.onsubmit = _handleSubmit;
+      document.getElementById('form').onsubmit = _handleSubmit;
 
-      $frequencyButtons.each(function(){
+      $('.form__frequency-button').each(function(){
         var $this = $(this);
 
         $this.click(function(){
