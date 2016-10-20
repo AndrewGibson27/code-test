@@ -11,7 +11,7 @@
     "url": "http://github.com/toddmotto/fireshell.git"
   },
   "scripts": {
-    "compile": "handlebars ./src/templates/amounts.handlebars -f ./src/js/templates.js"
+    "compile": "handlebars ./src/templates/amounts.handlebars -f ./app/assets/js/templates.js"
   },
   "devDependencies": {
     "connect-livereload": "~0.2.0",
