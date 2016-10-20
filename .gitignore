@@ -11,3 +11,4 @@ scripts.min.js
 
 # Andrew Gibson-specific stuff
 app/assets/js/templates.js
+app/assets/js/vendor.min.js

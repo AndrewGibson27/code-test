@@ -46,7 +46,8 @@ module.exports = function (grunt) {
       ],
       js: [
         '<%= project.src %>/js/*.js'
-      ]
+      ],
+      vendor: '<%= project.app %>/assets/js/vendor/*.js'
     },
 
     /**
@@ -105,7 +106,8 @@ module.exports = function (grunt) {
     concat: {
       dev: {
         files: {
-          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>'
+          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>',
+          '<%= project.assets %>/js/vendor.min.js': '<%= project.vendor %>'
         }
       },
       options: {
@@ -126,7 +128,8 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>'
+          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>',
+          '<%= project.assets %>/js/vendor.min.js': '<%= project.vendor %>'
         }
       }
     },
