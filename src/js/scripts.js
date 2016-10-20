@@ -34,7 +34,6 @@
 
       handlebarsAttach.innerHTML = markup;
       _handleRadioEvent();
-      currValue = amountsList[currentFrequency][1];
     };
 
     var _handleRadioEvent = function(){
@@ -89,6 +88,7 @@
           } else {
             currentFrequency = newFrequency;
             _updateAmounts();
+            currValue = amountsList[currentFrequency][1];
           }
         });
       });
