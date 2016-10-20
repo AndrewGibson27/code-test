@@ -34,13 +34,30 @@
 
       handlebarsAttach.innerHTML = markup;
       _handleRadioEvent();
+      _handleManualEvents();
+    };
+
+    var _handleManualEvents = function(){
+      var $manual = $('#manual-entry');
+
+      $manual.keyup(function(){
+        currValue = $(this).val();
+      });
+
+      $manual.focus(function(){
+        var $prev = $manual.prev();
+
+        $prev.prop('checked', true);
+
+        _storeSelectedRadio( $prev[0] );
+      });
     };
 
     var _handleRadioEvent = function(){
       $('.form__amount-radio').click(function(){
         var $this = $(this);
 
-        if ($this.attr('id') === 'manual') {
+        if ($this.attr('id') === 'manual-radio') {
           currValue = $this.next().val();
         } else {
           currValue = $(this).val();
@@ -70,6 +87,7 @@
     };
 
     var _bindEvents = function(){
+      _handleManualEvents();
       _handleRadioEvent();
       document.getElementById('form').onsubmit = _handleSubmit;
 
