@@ -72,9 +72,11 @@
 
 
 Handlebars.registerHelper('isDefaultSelected', function(index){
-   if (index === 1) {
-      return 'checked';
-   }
+  'use strict';
 
-   return '';
+  if (index === 1) {
+    return 'checked';
+  }
+
+  return '';
 });
