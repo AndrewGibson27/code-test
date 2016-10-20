@@ -23,6 +23,7 @@
     "jQuery": true,
     "Modernizr": true,
     "$": false,
-    "Handlebars": true
+    "Handlebars": true,
+    "WebFont": true
   }
 }
