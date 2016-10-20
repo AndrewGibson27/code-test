@@ -38,8 +38,6 @@
         } else {
           currValue = $(this).val();
         }
-
-        console.log(currValue);
       });
     };
 
