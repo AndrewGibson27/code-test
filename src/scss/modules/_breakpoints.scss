@@ -1,7 +1,6 @@
 $mq-breakpoints: (
-	mobile:  520px,
-	tablet:  799px,
-	desktop: 980px
+	tablet-min: 520px,
+	desktop-min: 799px
 );
 
 /* https://github.com/sass-mq/sass-mq */
