@@ -25,7 +25,6 @@
       });
 
       handlebarsAttach.innerHTML = markup;
-      currentFrequency = frequency;
       _handleRadioEvent();
     };
 
@@ -41,6 +40,13 @@
       });
     };
 
+    var _amountsRemainSame = function(newFrequency, currentFrequency){
+      return (
+        (newFrequency === 'annual' && currentFrequency == 'once') ||
+        (newFrequency === 'once' && currentFrequency == 'annual')
+      );
+    };
+
     var _bindEvents = function(){
       _handleRadioEvent();
       document.getElementById('form').onsubmit = _handleSubmit;
@@ -49,13 +55,18 @@
         var $this = $(this);
 
         $this.click(function(){
-          var frequency = $this.attr('data-frequency');
+          var newFrequency = $this.attr('data-frequency');
 
-          if (frequency === currentFrequency) {
+          if (newFrequency === currentFrequency) {
             return false;
+          } else if ( _amountsRemainSame(newFrequency, currentFrequency) ) {
+            currentFrequency = newFrequency;
+          } else {
+            _updateAmounts(newFrequency);
+            currentFrequency = newFrequency;
           }
 
-          _updateAmounts(frequency);
+          console.log(currentFrequency);
         });
       });
     };
