@@ -30,6 +30,7 @@
     "sass-mq": "^3.2.9"
   },
   "dependencies": {
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "webfontloader": "^1.6.26"
   }
 }
