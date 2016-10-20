@@ -19,31 +19,101 @@
 
     <header class="header" role="banner">
       <div class="logo">
-        <a href="/">
-
+        <a class="logo__link" href="/">
+          <img class="logo__file" src="data:image/png;base64,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" alt="Texas Tribune logo">
         </a>
       </div>
       <nav class="nav" role="navigation">
-        <ul>
-          <li>
-            <a href="/"></a>
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a class="nav__link" href="/"></a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main class="main" role="main">
+      <div class="text">
+        <h2 class="text__heading">Support Us</h2>
+        <div class="text__content">
+          <p class="text__para">The Texas Tribune is the only member-supported, digitally focused, nonpartisan news organization that informs & engages with Texans about public policy, politics, government and statewide issues.</p>
+          <p class="text__para">Our nonprofit newsroom depends on your support!</p>
+        </div>
+      </div>
 
+      <form class="form" action="" method="post">
+        <p class="form__intro">I would like to give</p>
+        <fieldset class="form__fieldset">
+          <ul class="form__amounts">
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-1">
+              <label class="form__amount-label" for="amount-1">&#36;4</label>
+            </li>
 
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-2">
+              <label class="form__amount-label" for="amount-2">&#36;9</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-3">
+              <label class="form__amount-label" for="amount-3">&#36;17</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-4">
+              <label class="form__amount-label" for="amount-4">&#36;31</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-5">
+              <label class="form__amount-label" for="amount-5">&#36;63</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="amount-6">
+              <label class="form__amount-label" for="amount-6">&#36;84</label>
+            </li>
+
+            <li class="form__amount">
+              <input class="form__amount-input" type="text" placeholder="&#36;">
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <ul class="form__frequencies">
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="annual">Annually</button>
+            </li>
+
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="monthly">Monthly</button>
+            </li>
+
+            <li class="form__frequency">
+              <button class="form__frequency-button" data-frequency="once">One Time</button>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <div class="form__contact-group">
+            <label class="form__contact-label" for="name">Name</label>
+            <input class="form__contact-input" type="text" id="name">
+          </div>
+
+           <div class="form__contact-group">
+            <label class="form__contact-label" for="email">Email</label>
+            <input class="form__contact-input" type="email" id="email">
+          </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <input class="form__submit" type="submit" id="submit">
+        </fieldset>
+      </form>
     </main>
-
-    <aside class="sidebar" role="complementary">
-
-    </aside>
-
-    <footer class="footer" role="contentinfo">
-
-    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>');</script>
