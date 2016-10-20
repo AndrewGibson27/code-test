@@ -17,7 +17,7 @@
       donatorName = document.getElementById('donator-name');
 
     var init = function(){
-      _bindEvents();
+      _bindInitialEvents();
     };
 
     var _handleSubmit = function(e){
@@ -90,7 +90,7 @@
 
     var _storeNewDOMReferences = function(){
       email = document.getElementById('email');
-      name = document.getElementById('donator-name');
+      donatorName = document.getElementById('donator-name');
     };
 
     var _showErrorMessage = function(errorText){
@@ -113,10 +113,10 @@
       );
     };
 
-    var _bindEvents = function(){
+    var _bindInitialEvents = function(){
       _handleManualEvents();
       _handleRadioEvent();
-      donationForm.onsubmit = _handleSubmit;
+      donationForm.addEventListener('submit', _handleSubmit);
 
       $('.form__frequency-button').each(function(){
         var $this = $(this);
