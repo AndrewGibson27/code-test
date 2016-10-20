@@ -4,13 +4,15 @@
   var formHandler = function(){
     var form = document.getElementById('form'),
       $frequencyButtons = $('.form__frequency-button'),
+      $radioButtons = $('.form__amount-radio'),
       handlebarsAttach = document.getElementById('amounts-list'),
       amountsList = {
         annual: ['35', '60', '150', '250', '500'],
         monthly: ['4', '9', '17', '31', '63'],
         once: ['35', '60', '150', '250', '500']
       },
-      currentFrequency = 'monthly';
+      currentFrequency = 'monthly',
+      currValue = amountsList[currentFrequency][1];
 
     var init = function(){
       _bindEvents();
@@ -30,6 +32,10 @@
     };
 
     var _bindEvents = function(){
+      $radioButtons.click(function(){
+        currValue = $(this).val();
+      });
+
       form.onsubmit = _handleSubmit;
 
       $frequencyButtons.each(function(){
