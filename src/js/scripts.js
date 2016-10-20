@@ -68,6 +68,28 @@
       });
     };
 
+    var _handleFrequencyEvent = function(){
+      $('.form__frequency-button').each(function(){
+        var $this = $(this);
+
+        $this.click(function(e){
+          e.preventDefault();
+
+          var newFrequency = $this.attr('data-frequency');
+
+          if (newFrequency === currentFrequency) {
+            return false;
+          } else if ( _amountsRemainSame(newFrequency, currentFrequency) ) {
+            currentFrequency = newFrequency;
+          } else {
+            currentFrequency = newFrequency;
+            _updateAmounts();
+            currValue = amountsList[currentFrequency][1];
+          }
+        });
+      });
+    };
+
     var _checkFormValidity = function(){
       var errorText = '',
         valid = true;
@@ -116,27 +138,8 @@
     var _bindInitialEvents = function(){
       _handleManualEvents();
       _handleRadioEvent();
+      _handleFrequencyEvent();
       donationForm.addEventListener('submit', _handleSubmit);
-
-      $('.form__frequency-button').each(function(){
-        var $this = $(this);
-
-        $this.click(function(e){
-          e.preventDefault();
-
-          var newFrequency = $this.attr('data-frequency');
-
-          if (newFrequency === currentFrequency) {
-            return false;
-          } else if ( _amountsRemainSame(newFrequency, currentFrequency) ) {
-            currentFrequency = newFrequency;
-          } else {
-            currentFrequency = newFrequency;
-            _updateAmounts();
-            currValue = amountsList[currentFrequency][1];
-          }
-        });
-      });
     };
 
     return {
