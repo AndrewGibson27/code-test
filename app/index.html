@@ -41,9 +41,9 @@
         </div>
       </div>
 
-      <form class="form" action="" method="post" id="form">
-        <p class="form__intro">I would like to give</p>
-        <fieldset class="form__fieldset">
+      <form class="form" action="" method="post" id="form" role="form">
+        <p class="form__intro" id="form-intro">I would like to give</p>
+        <fieldset class="form__fieldset" aria-describedby="form-intro">
           <ul class="form__amounts" id="amounts-list">
             <li class="form__amount">
               <input class="form__amount-radio" type="radio" id="amount-1" value="4" name="amount">
@@ -80,15 +80,15 @@
         <fieldset class="form__fieldset">
           <ul class="form__frequencies">
             <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="annual">Annually</button>
+              <button class="form__frequency-button" data-frequency="annual" aria-label="Give annually">Annually</button>
             </li>
 
             <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="monthly">Monthly</button>
+              <button class="form__frequency-button" data-frequency="monthly" aria-label="Give monthly">Monthly</button>
             </li>
 
             <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="once">One Time</button>
+              <button class="form__frequency-button" data-frequency="once" aria-label="Give once">One Time</button>
             </li>
           </ul>
         </fieldset>
@@ -96,12 +96,12 @@
         <fieldset class="form__fieldset">
           <div class="form__contact-group">
             <label class="form__contact-label" for="name">Name</label>
-            <input class="form__contact-input" type="text" id="name" required>
+            <input class="form__contact-input" type="text" id="name" required aria-required="true">
           </div>
 
            <div class="form__contact-group">
             <label class="form__contact-label" for="email">Email</label>
-            <input class="form__contact-input" type="email" id="email" required>
+            <input class="form__contact-input" type="email" id="email" required aria-required="true">
           </div>
         </fieldset>
 
