@@ -1,10 +1,11 @@
 {{#each amounts}}
 	<li class="form__amount">
-		<input class="form__amount-radio" type="radio" id="amount-{{ @index }}" value={{ this }}>
+		<input class="form__amount-radio" type="radio" id="amount-{{ @index }}" value={{ this }} name="amount">
 		<label class="form__amount-label" for="amount-{{ @index }}">&#36;{{ this }}</label>
 	</li>
 {{/each}}
 
 <li class="form__amount">
-	<input class="form__amount-input" type="text" placeholder="&#36;" value="">
+	<input class="form__amount-radio" type="radio" id="manual" name="amount">
+	<input class="form__amount-input" type="text" placeholder="&#36;">
 </li>
