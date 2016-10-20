@@ -1,6 +1,6 @@
 {{#each amounts}}
 	<li class="form__amount">
-		<input class="form__amount-radio" type="radio" id="amount-{{ @index }}" value={{ this }} {{{isDefaultSelected @index}}}>
+		<input class="form__amount-radio" type="radio" id="amount-{{ @index }}" value={{ this }} {{{isDefaultSelected @index}}} name="amount">
 		<label class="form__amount-label" for="amount-{{ @index }}">&#36;{{ this }}</label>
 	</li>
 {{/each}}
