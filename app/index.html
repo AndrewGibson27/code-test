@@ -41,41 +41,37 @@
         </div>
       </div>
 
-      <form class="form" action="" method="post">
+      <form class="form" action="" method="post" id="form">
         <p class="form__intro">I would like to give</p>
         <fieldset class="form__fieldset">
-          <ul class="form__amounts">
+          <ul class="form__amounts" id="amounts-list">
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-1">
+              <input class="form__amount-radio" type="radio" id="amount-1" value="4" name="amount">
               <label class="form__amount-label" for="amount-1">&#36;4</label>
             </li>
 
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-2">
+              <input class="form__amount-radio" type="radio" id="amount-2" value="9" name="amount" checked>
               <label class="form__amount-label" for="amount-2">&#36;9</label>
             </li>
 
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-3">
+              <input class="form__amount-radio" type="radio" id="amount-3" value="17" name="amount">
               <label class="form__amount-label" for="amount-3">&#36;17</label>
             </li>
 
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-4">
+              <input class="form__amount-radio" type="radio" id="amount-4" value="31" name="amount">
               <label class="form__amount-label" for="amount-4">&#36;31</label>
             </li>
 
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-5">
+              <input class="form__amount-radio" type="radio" id="amount-5" value="63" name="amount">
               <label class="form__amount-label" for="amount-5">&#36;63</label>
             </li>
 
             <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-6">
-              <label class="form__amount-label" for="amount-6">&#36;84</label>
-            </li>
-
-            <li class="form__amount">
+              <input class="form__amount-radio" type="radio" id="manual" name="amount">
               <input class="form__amount-input" type="text" placeholder="&#36;">
             </li>
           </ul>
@@ -115,8 +111,9 @@
       </form>
     </main>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>');</script>
+    <script src="assets/js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/vendor/handlebars.runtime.min.js"></script>
+    <script src="assets/js/templates.js"></script>
     <script src="assets/js/scripts.min.js"></script>
 
     <script>

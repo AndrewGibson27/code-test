@@ -10,6 +10,9 @@
     "type": "git",
     "url": "http://github.com/toddmotto/fireshell.git"
   },
+  "scripts": {
+    "compile": "handlebars ./src/templates/amounts.handlebars -f ./app/assets/js/templates.js"
+  },
   "devDependencies": {
     "connect-livereload": "~0.2.0",
     "grunt": "~0.4.1",
@@ -22,5 +25,8 @@
     "grunt-open": "~0.2.0",
     "matchdep": "~0.1.2",
     "sass-mq": "^3.2.9"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5"
   }
 }

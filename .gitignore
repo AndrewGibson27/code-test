@@ -8,3 +8,6 @@ node_modules
 .sass-cache
 style.min.css
 scripts.min.js
+
+# Andrew Gibson-specific stuff
+app/assets/js/templates.js
