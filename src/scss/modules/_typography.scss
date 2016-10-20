@@ -14,9 +14,14 @@ $font-xxs: .7rem;
 
 // set font root sizes for desktop, tablet, mobile
 html {
-  font-size: $font-root;
-  @media(min-width:320px) {
-    font-size: $font-root-mobile;
+  font-size: $font-root-mobile;
+
+  @media screen and (min-width: 520px) {
+    font-size: $font-root-tablet;
+  }
+
+  @media screen and (min-width: 799px) {
+    font-size: $font-root;
   }
 }
 
