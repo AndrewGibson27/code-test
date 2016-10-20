@@ -10,20 +10,21 @@
       },
       currentFrequency = 'monthly',
       currValue = amountsList[currentFrequency][1],
-      selectedRadio = document.getElementById('amount-2');
+      donationForm = document.getElementById('form'),
+      formError = document.getElementById('form-error'),
+      selectedRadio = document.getElementById('amount-2'),
+      email = document.getElementById('email'),
+      donatorName = document.getElementById('donator-name');
 
     var init = function(){
-      _bindEvents();
+      _bindInitialEvents();
     };
 
     var _handleSubmit = function(e){
       e.preventDefault();
 
-      if ( _submissionIsValid() ) {
+      if ( _checkFormValidity() ) {
         console.log(currValue);
-      } else {
-        console.warn('Invalid numeric value. At this point, the user knows he/she is just messing with us. Click it one more time, and you get an error message on the form.');
-        _raiseInvalidError();
       }
     };
 
@@ -35,6 +36,7 @@
       handlebarsAttach.innerHTML = markup;
       _handleRadioEvent();
       _handleManualEvents();
+      _storeNewDOMReferences();
     };
 
     var _handleManualEvents = function(){
@@ -66,31 +68,7 @@
       });
     };
 
-    var _submissionIsValid = function(){
-      return !isNaN(currValue) && currValue.trim() !== '';
-    };
-
-    var _raiseInvalidError = function(){
-      selectedRadio.setCustomValidity('Please enter a number.');
-    };
-
-    var _storeSelectedRadio = function(el){
-      selectedRadio.setCustomValidity('');
-      selectedRadio = el;
-    };
-
-    var _amountsRemainSame = function(newFrequency, currentFrequency){
-      return (
-        (newFrequency === 'annual' && currentFrequency === 'once') ||
-        (newFrequency === 'once' && currentFrequency === 'annual')
-      );
-    };
-
-    var _bindEvents = function(){
-      _handleManualEvents();
-      _handleRadioEvent();
-      document.getElementById('form').onsubmit = _handleSubmit;
-
+    var _handleFrequencyEvent = function(){
       $('.form__frequency-button').each(function(){
         var $this = $(this);
 
@@ -110,6 +88,58 @@
           }
         });
       });
+    };
+
+    var _checkFormValidity = function(){
+      var errorText = '',
+        valid = true;
+
+      if ( isNaN(currValue) || currValue.trim() === '' ) {
+        errorText += 'Please enter a valid donation amount.';
+        _raiseInvalidAmountError();
+        valid = false;
+      }
+      if ( email.value.trim() === '' || donatorName.value.trim() === '' ) {
+        errorText += ' Please enter a valid name and email address';
+        valid = false;
+      }
+      if (!valid) {
+        _showErrorMessage(errorText);
+      }
+
+      return valid;
+    };
+
+    var _storeNewDOMReferences = function(){
+      email = document.getElementById('email');
+      donatorName = document.getElementById('donator-name');
+    };
+
+    var _showErrorMessage = function(errorText){
+      formError.innerText = errorText;
+    };
+
+    var _raiseInvalidAmountError = function(){
+      selectedRadio.setCustomValidity('Please enter a number.');
+    };
+
+    var _storeSelectedRadio = function(el){
+      selectedRadio.setCustomValidity('');
+      selectedRadio = el;
+    };
+
+    var _amountsRemainSame = function(newFrequency, currentFrequency){
+      return (
+        (newFrequency === 'annual' && currentFrequency === 'once') ||
+        (newFrequency === 'once' && currentFrequency === 'annual')
+      );
+    };
+
+    var _bindInitialEvents = function(){
+      _handleManualEvents();
+      _handleRadioEvent();
+      _handleFrequencyEvent();
+      donationForm.addEventListener('submit', _handleSubmit);
     };
 
     return {
