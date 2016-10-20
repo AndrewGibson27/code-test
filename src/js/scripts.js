@@ -26,13 +26,25 @@
 
       handlebarsAttach.innerHTML = markup;
       currentFrequency = frequency;
+      _handleRadioEvent();
+    };
+
+    var _handleRadioEvent = function(){
+      $('.form__amount-radio').click(function(){
+        var $this = $(this);
+
+        if ($this.attr('id') === 'manual') {
+          currValue = $this.next().val();
+        } else {
+          currValue = $(this).val();
+        }
+
+        console.log(currValue);
+      });
     };
 
     var _bindEvents = function(){
-      $('.form__amount-radio').click(function(){
-        currValue = $(this).val();
-      });
-
+      _handleRadioEvent();
       document.getElementById('form').onsubmit = _handleSubmit;
 
       $('.form__frequency-button').each(function(){
