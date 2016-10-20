@@ -10,7 +10,7 @@
       },
       currentFrequency = 'monthly',
       currValue = amountsList[currentFrequency][1],
-      selectedRadio = document.getElementById('initial-selection');
+      selectedRadio = document.getElementById('amount-2');
 
     var init = function(){
       _bindEvents();
@@ -19,7 +19,7 @@
     var _handleSubmit = function(e){
       e.preventDefault();
 
-      if ( _submissionIsValid(currValue) ) {
+      if ( _submissionIsValid() ) {
         console.log(currValue);
       } else {
         console.warn('Invalid numeric value. At this point, the user knows he/she is just messing with us. Click it one more time, and you get an error message on the form.');
@@ -46,9 +46,8 @@
 
       $manual.focus(function(){
         var $prev = $manual.prev();
-
+        currValue = $(this).val();
         $prev.prop('checked', true);
-
         _storeSelectedRadio( $prev[0] );
       });
     };
@@ -60,15 +59,15 @@
         if ($this.attr('id') === 'manual-radio') {
           currValue = $this.next().val();
         } else {
-          currValue = $(this).val();
+          currValue = $this.val();
         }
 
         _storeSelectedRadio($this[0]);
       });
     };
 
-    var _submissionIsValid = function(currValue){
-      return !isNaN(currValue);
+    var _submissionIsValid = function(){
+      return !isNaN(currValue) && currValue.trim() !== '';
     };
 
     var _raiseInvalidError = function(){
@@ -76,6 +75,7 @@
     };
 
     var _storeSelectedRadio = function(el){
+      selectedRadio.setCustomValidity('');
       selectedRadio = el;
     };
 
