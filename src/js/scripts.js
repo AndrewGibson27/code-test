@@ -81,8 +81,8 @@
 
     var _amountsRemainSame = function(newFrequency, currentFrequency){
       return (
-        (newFrequency === 'annual' && currentFrequency == 'once') ||
-        (newFrequency === 'once' && currentFrequency == 'annual')
+        (newFrequency === 'annual' && currentFrequency === 'once') ||
+        (newFrequency === 'once' && currentFrequency === 'annual')
       );
     };
 
