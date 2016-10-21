@@ -1,7 +1,9 @@
 .form {
 	box-sizing: border-box;
-	border-top: 1px solid $color-gray-light;
-	border-bottom: 1px solid $color-gray-light;
+	max-width: 400px;
+	margin: 0 auto;
+	border: 1px solid $color-gray-light;
+	border-radius: 2px;
 	background-color: $color-white-off;
 	margin-top: 20px;
 	padding: 10px 15px;
@@ -9,7 +11,6 @@
 	@include mq($from: tablet-min) {
 		float: right;
 		margin-top: 0;
-		border-radius: 2px;
 	}
 
 	@include mq($from: tablet-min, $until: desktop-min) {
@@ -24,8 +25,6 @@
 }
 
 	.form__intro {
-		max-width: 400px;
-		margin: 0 auto;
 		font-family: $font-serif;
 		font-size: $font-m;
 		padding-bottom: 3px;
