@@ -1,0 +1,29 @@
+.reusable-button {
+	box-sizing: border-box;
+	width: 100%;
+	height: 35px;
+	display: block;
+	background-color: $color-teal-gray;
+	border: none;
+	border-radius: 3px;
+	color: $color-white-pure;
+	font-family: $font-sansserif;
+	font-size: $font-s;
+	cursor: pointer;
+
+	&.selected {
+		background-color: $color-gray-dark;
+	}
+
+	&:active {
+		background-color: $color-black-off;
+	}
+}
+
+.reusable-text-input {
+	height: 30px;
+	background-color: $color-white-pure;
+	border: 1px solid $color-teal-gray;
+	color: $color-black-pure;
+	text-indent: 10px;
+}

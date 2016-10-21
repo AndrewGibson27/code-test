@@ -1,3 +1,5 @@
+@import '../reusable/form-elements';
+
 .form {
 	box-sizing: border-box;
 	max-width: 400px;
@@ -71,11 +73,8 @@
 				}
 
 				.form__amount-input {
-					height: 30px;
-					background-color: $color-white-pure;
-					border: 1px solid $color-teal-gray;
-					color: $color-black-pure;
-					text-indent: 10px;
+					@extend .reusable-text-input;
+					width: 150px;
 				}
 
 		.form__frequencies {
@@ -94,25 +93,7 @@
 			}
 
 				.form__frequency-button {
-					box-sizing: border-box;
-					width: 100%;
-					height: 35px;
-					display: block;
-					background-color: $color-teal-gray;
-					border: none;
-					border-radius: 3px;
-					color: $color-white-pure;
-					font-family: $font-sansserif;
-					font-size: $font-s;
-					cursor: pointer;
-
-					&.selected {
-					  background-color: $color-gray-dark;
-					}
-
-					&:active {
-						background-color: $color-black-off;
-					}
+					@extend .reusable-button;
 				}
 
 		.form__contact-group {
@@ -130,32 +111,12 @@
 			}
 
 			.form__contact-input {
-				display: block;
+				@extend .reusable-text-input;
 				width: 100%;
-				height: 30px;
-				margin-top: 5px;
-				background-color: $color-white-pure;
-				border: 1px solid $color-teal-gray;
-				color: $color-black-pure;
-				text-indent: 10px;
 			}
 
 		.form__submit {
-			box-sizing: border-box;
-			width: 100%;
-			height: 35px;
-			display: block;
-			background-color: $color-teal-gray;
-			border: none;
-			border-radius: 3px;
-			color: $color-white-pure;
-			font-family: $font-sansserif;
-			font-size: $font-s;
-			cursor: pointer;
-
-			&:active {
-				background-color: $color-black-off;
-			}
+			@extend .reusable-button;
 		}
 
 	.form__error {

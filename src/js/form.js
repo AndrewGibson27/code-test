@@ -129,12 +129,6 @@
       donationForm.addEventListener('submit', _handleSubmit);
     };
 
-    // When values update, re-store a few DOM references to we can quickly access them later
-    var _storeNewDOMReferences = function(){
-      email = document.getElementById('email');
-      donatorName = document.getElementById('donator-name');
-    };
-
 
 
 
@@ -171,6 +165,12 @@
       } else if (state === 'hide') {
         formError.className = currClass + ' hidden';
       }
+    };
+
+    // When values update, re-store a few DOM references to we can quickly access them later
+    var _storeNewDOMReferences = function(){
+      email = document.getElementById('email');
+      donatorName = document.getElementById('donator-name');
     };
 
 
@@ -210,11 +210,14 @@
       var containsSuffix = false;
 
       for (var i = 0; i < emailSuffixes.length; i++) {
-        containsSuffix = emailTrimmed.indexOf( emailSuffixes[i] ) === -1 ? false : true;
-        if (containsSuffix) break;
+        containsSuffix = emailTrimmed.toLowerCase().indexOf( emailSuffixes[i] ) === -1 ? false : true;
+        if (containsSuffix) {
+          break;
+        }
       }
 
       // Validate email
+      // Unnecessary on most browsers besides Safari, which does not validate it by default
       if ( emailTrimmed.indexOf('@') === -1 || !containsSuffix || emailTrimmed === '') {
         errorText += ' Please enter a valid email address.';
         valid = false;
