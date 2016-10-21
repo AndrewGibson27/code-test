@@ -106,6 +106,10 @@
 					font-size: $font-s;
 					cursor: pointer;
 
+					&.selected {
+					  background-color: $color-gray-dark;
+					}
+
 					&:active {
 						background-color: $color-black-off;
 					}

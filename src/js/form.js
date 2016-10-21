@@ -20,7 +20,8 @@
       formError = document.getElementById('form-error'), // Error message <p> tag
       selectedRadio = document.getElementById('amount-2'), // Store currently-selected radio button
       email = document.getElementById('email'), // Email field
-      donatorName = document.getElementById('donator-name'); // Name field
+      donatorName = document.getElementById('donator-name'), // Name field
+      $formFrequencyButtons = $('.form__frequency-button');
 
 
 
@@ -90,7 +91,7 @@
 
     // Events related to donation-frequency buttons
     var _handleFrequencyEvent = function(){
-      $('.form__frequency-button').each(function(){
+      $formFrequencyButtons.each(function(){
         var $this = $(this);
 
         $this.click(function(e){
@@ -112,6 +113,9 @@
             _updateAmounts();
             currValue = amountsList[currentFrequency][1];
           }
+
+          $formFrequencyButtons.removeClass('selected');
+          $this.addClass('selected');
         });
       });
     };
