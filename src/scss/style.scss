@@ -2,6 +2,10 @@
 // CONFIG MODULES
 //----------------------------------*/
 
+.container {
+  margin-top: 50px;
+}
+
 @import 'modules/breakpoints';
 @import 'modules/clearfix';
 @import 'modules/reset';

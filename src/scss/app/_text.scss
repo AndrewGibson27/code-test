@@ -1,15 +1,26 @@
 .text {
-
+	box-sizing: border-box;
+	padding: 10px 15px 0 15px;
 }
 
 	.text__heading {
-
+		font-family: $font-serif;
+		color: $color-black-pure;
+		margin: 0;
+		padding-bottom: 3px;
+		border-bottom: 2px solid $color-yellow-tribune;
 	}
 
 	.text__content {
-
+		margin-top: 10px;
 	}
 
 		.text__para {
+			font-family: $font-sansserif;
+			color: $color-gray-dark;
+			margin-top: 15px;
 
+			&:first-child {
+				margin-top: 0;
+			}
 		}
