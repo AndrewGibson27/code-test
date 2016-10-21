@@ -166,7 +166,7 @@
       var currClass = formError.className;
 
       if (state === 'show') {
-        formError.className = currClass.replace('hidden', '');
+        formError.className = currClass.replace(/hidden/g, '');
 
       } else if (state === 'hide') {
         formError.className = currClass + ' hidden';
