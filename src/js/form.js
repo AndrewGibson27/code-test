@@ -114,6 +114,7 @@
             currValue = amountsList[currentFrequency][1];
           }
 
+          // Add selected class to selected button
           $formFrequencyButtons.removeClass('selected');
           $this.addClass('selected');
         });
