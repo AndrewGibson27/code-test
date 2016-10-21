@@ -4,7 +4,7 @@
 	margin: 0 auto;
 
 	@include mq($from: tablet-min) {
-		background-image: url(../../../assets/img/support-us-bg-image.jpg);
+		background-image: url(../img/support-us-bg-image.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
