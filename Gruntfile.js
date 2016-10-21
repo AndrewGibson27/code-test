@@ -224,7 +224,8 @@ module.exports = function (grunt) {
             require('autoprefixer')({
               browsers: BROWSERS
             }),
-            require('cssnano')()
+            require('cssnano')(),
+            require('pixrem')()
           ]
         },
         files: {
