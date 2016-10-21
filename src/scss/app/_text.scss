@@ -2,12 +2,19 @@
 	box-sizing: border-box;
 	padding: 10px 15px 0 15px;
 
-	@include mq($from: tablet-min, $until: desktop-min) {
-		width: calc(50% - 20px);
+	@include mq($from: tablet-min) {
 		margin-right: 20px;
 		float: left;
 		padding: 20px;
 		background: rgba(0,0,0,.6);
+	}
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		width: calc(50% - 20px);
+	}
+
+	@include mq($from: desktop-min) {
+		width: 400px;
 	}
 }
 
@@ -18,7 +25,7 @@
 		padding-bottom: 3px;
 		border-bottom: 2px solid $color-yellow-tribune;
 
-		@include mq($from: tablet-min, $until: desktop-min) {
+		@include mq($from: tablet-min) {
 			color: $color-white-pure;
 		}
 	}
@@ -36,7 +43,7 @@
 				margin-top: 0;
 			}
 
-			@include mq($from: tablet-min, $until: desktop-min) {
+			@include mq($from: tablet-min) {
 				color: $color-gray-light;
 			}
 		}

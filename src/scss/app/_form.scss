@@ -6,12 +6,20 @@
 	margin-top: 20px;
 	padding: 10px 15px;
 
-	@include mq($from: tablet-min, $until: desktop-min) {
-		width: 50%;
+	@include mq($from: tablet-min) {
 		float: right;
 		margin-top: 0;
-		padding: 15px;
 		border-radius: 2px;
+	}
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		width: 50%;
+		padding: 15px;
+	}
+
+	@include mq($from: desktop-min) {
+		width: 400px;
+		padding: 25px;
 	}
 }
 
