@@ -31,9 +31,6 @@ html {
 
 // Set base typography sizes for headers, paragraphs, etc.
 h1 {
-  @media(min-width:320px) {
-    font-size: $font-l;
-  }
   font-size: $font-xl;
 }
 
@@ -55,4 +52,8 @@ h5 {
 
 p {
   font-size: $font-b;
+
+  @media screen and (min-width: 799px) {
+    font-size: $font-m;
+  }
 }
