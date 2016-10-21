@@ -12,108 +12,114 @@
     <link href="//ajax.googleapis.com" rel="dns-prefetch">
     <link href="assets/css/style.min.css" rel="stylesheet">
 
-    <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="assets/js/vendor/modernizr-2.6.2.min.js" async></script>
 
   </head>
   <body>
 
     <header class="header" role="banner">
-      <div class="logo">
-        <a class="logo__link" href="/">
-          <img class="logo__file" src="data:image/png;base64,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" alt="Texas Tribune logo">
-        </a>
+      <div class="header__inner">
+        <div class="logo">
+          <a class="logo__link" href="https://www.texastribune.org/">
+            <img class="logo__file" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcUAAAAyCAMAAAAa/zCjAAAAY1BMVEVMaXEAAAAAAAAAAAD/wwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwD/wwAAAAAv58frAAAAH3RSTlMA7xBgQJ8wv0CA388gcI+vUBDv38+PcDCvIICfUL9gLVPMTQAABpVJREFUeNrtnGljoywXhg9SUNyzNF1nmv//K5+8Gc0NHEzAvJ3RtveXRuCwXbIdrfQQrw19KdXS/E8FfQF9xOvhbKDzsCTR+FMTuUmDdkh5Pd9pUyQZwQwBXSBXciWr4yChai+uzT0hCy/EyCxgp0O5qEbzWnnXrWXXsNR6qm5tOsXiGJYhGn8WRG7SoB1SXs932jQfflY0yAwBLWDZ6SFd2VkJacchX1+EJkIqY3bFRC5l77fVu84tu5L1TDFVt3zNFIFoHEwlrge1l/SNDVH4KJIpQkLfogipeIpH+U0oknAJ6eGyc4BwUDUggvFcisDIKXKZeIr5d6HY2lMqLnvkivTVVUqiTqYIlTcpQnU0xaP+JhRr9I01oZbhTK+XpNIpQjKeooqnqO6keFgDRbaGFHx2bEJldZduKgpZjhf3UOziKZbxFI/ZXRT3tJumWJs/GrMrh+sikmJVWBrqeSPfaVNpd6NyG48gD64zgrKK31ByKPpCe7gmr4n1aCuuUTTnpJeaJFA0VyiqAtJBigd6naIIGX8RjqOI9NCtfKdNM2GRE3xurPiciXvCvTSw4u0JB2FGv0kR++cinmJ5haK5eerf0MtKKJLCuOqxKWA1AjWkM0gzlyIlUMzTKR7lHRSfT8G/Fk+RHS4UEsHQ1oRroFouxfwOiu+n4N/roIg5MxsnV0lQw/dDvIB8cRQhPZvi7hy+XQVF7G/64Yfw51uo8WpVL5+imk3x8Rz+tgqK2N+oLtC6arBztje1dz7QxVn1gihC2VyKL+fwp1VQxHgTGGCsQo27vakwOJmWRtHMpLgfInYroaj98zezy0d7tlqaf0AxS6JYplDcvh4CD4I357DD43bJFKkMO4OAS2VuZAYLlf0diqimoBiKkEwZi3vw8/Wy/7+OxdIMKpIphk0b79aF1NhgbwbtYVDpeyhqFHuLokn1oyIoSDE3g5wZdftEYT1sk2fUKv+jKkARMskUw6aZtw2FqrH12N6wvauQsynCA9deo1jmJ5V4dhJFEQu9DlKEvHXxN4V0SF8Xoc+lyJmILEQhG1NUQX+3ypIo4kYVR6CJ9YZLiqWYj7deFEXojc+qm+eP5VNEtAqFC+SJ8VsdoSpLocglCoqk2GmKp9iPd2YURWj/Qq6e9h8roJhNLIsNX1lgo2yM+h6KXU2fQnHcDzVxFKGtC+p9+7EGis3EFrW7LFoayyYrBzPxTIoqimL6jDq6pcpYitCGoBcEL5piiQjlhKPjQtG9YJNqPMX0924QF0txdEu1qRR3ZGt7L8XPPi9yxhYN+5RYudsbvjiq+RQxlEGRPc81Am2IpTh2hUj13Tw6cW+zKOLZuPpsitzlLbmV3fZp0yKNYuOgUbfPi7VI9N3kuA9TKb47cb/X4IGrj7YqllGJ35yVhOGcU38R/cYG7pginiKpeRQ9D9zCKSI9pP3NTWfTamgSo06nCMe6vkUR9ewTKNazKP76A+/145XO2i+eIl5fxOSGCCY1fRO0MyiCWwzF9LFI3RyKh7PLbXf6tT875B6XThE+0fGvwOYmoApvuEkPdr5EisUciid0m5Hc6+YEdOEU0arycttKGAUEi9ybU8USKVKeTnF7Hoijdidqi6dYXxolkQj5MBU+Raw9i6TYp1N827y5547N89IptnjEL/ATS4qvhlGkRVOkMpni8/bD1W7xFAXflrdoPpe69EPl1br8FxTrmxRlGsWwFk5RWouhu7/J3KepCtub3O3B/i/tbipEYucl3RlFcYokFkmxNJbqJIrctIILDO3tbZvCqxsK6Fw3nPlUirVxLAVcsHY/NQGKJkwxN5D8qxS5ihSK3FQ7x0AFPMgm8w4UBV63qqT9P1P6UyhyZa7rrzMGCXWAYiY8ilz5uikqJ5veXm06TK9OnzYA6vVEOkVUoI+iiHL0VBynSO2XpojbtPSWEIOxl/vZdqDtSM+giFxVNEXgD8dxivUXp9h4zjOF7Wbmr3YScaEubGgOReyo6kiKCk/FmFoKUiT1lSnyT2r0iOv5hyqwLmU579xZFLFodUnf2ABGHscp6i9NsWAPlfC8z7CJEnYoBG8zzqQIj1EMxdIuJ2vdOjTEKCLk0yhKfC9p1PxvT03nO216SdnTqOZSYIuSB3XOh6pqhfcQTUZhoajpoD5Hn1/99pRprGz8OpRWHVrW/iL621O7d/pmKhpzUlP80zqYk8B3ti4uU/rRKgWKv57oRyunuD3Qj9ZO8flnMl29dg/0o7XrP3s460ecP1kcAAAAAElFTkSuQmCC" alt="Texas Tribune logo">
+          </a>
+        </div>
+        <nav class="nav" role="navigation">
+          <ul class="nav__list">
+            <li class="nav__list-item">
+              <a class="nav__link" href="/"></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="nav" role="navigation">
-        <ul class="nav__list">
-          <li class="nav__list-item">
-            <a class="nav__link" href="/"></a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <main class="main" role="main">
-      <div class="text">
-        <h2 class="text__heading">Support Us</h2>
-        <div class="text__content">
-          <p class="text__para">The Texas Tribune is the only member-supported, digitally focused, nonpartisan news organization that informs & engages with Texans about public policy, politics, government and statewide issues.</p>
-          <p class="text__para">Our nonprofit newsroom depends on your support!</p>
-        </div>
-      </div>
-
-      <form class="form" action="" method="post" id="form" role="form">
-        <p class="form__intro" id="form-intro">I would like to give</p>
-        <fieldset class="form__fieldset" aria-describedby="form-intro">
-          <ul class="form__amounts" id="amounts-list">
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-1" value="4" name="amount">
-              <label class="form__amount-label" for="amount-1">&#36;4</label>
-            </li>
-
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-2" value="9" name="amount" checked>
-              <label class="form__amount-label" for="amount-2">&#36;9</label>
-            </li>
-
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-3" value="17" name="amount">
-              <label class="form__amount-label" for="amount-3">&#36;17</label>
-            </li>
-
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-4" value="31" name="amount">
-              <label class="form__amount-label" for="amount-4">&#36;31</label>
-            </li>
-
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" id="amount-5" value="63" name="amount">
-              <label class="form__amount-label" for="amount-5">&#36;63</label>
-            </li>
-
-            <li class="form__amount">
-              <input class="form__amount-radio" type="radio" name="amount" id="manual-radio">
-              <input class="form__amount-input" type="number" id="manual-entry" placeholder="&#36;100.00">
-            </li>
-          </ul>
-        </fieldset>
-
-        <fieldset class="form__fieldset">
-          <ul class="form__frequencies">
-            <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="annual" aria-label="Give annually">Annually</button>
-            </li>
-
-            <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="monthly" aria-label="Give monthly">Monthly</button>
-            </li>
-
-            <li class="form__frequency">
-              <button class="form__frequency-button" data-frequency="once" aria-label="Give once">One Time</button>
-            </li>
-          </ul>
-        </fieldset>
-
-        <fieldset class="form__fieldset">
-          <div class="form__contact-group">
-            <label class="form__contact-label" for="name">Name</label>
-            <input class="form__contact-input" type="text" id="donator-name" required aria-required="true">
+    <div class="container">
+      <main class="main" role="main">
+        <div class="main__inner">
+          <div class="text">
+            <h1 class="text__heading">Support Us</h1>
+            <div class="text__content">
+              <p class="text__para">The Texas Tribune is the only member-supported, digitally focused, nonpartisan news organization that informs & engages with Texans about public policy, politics, government and statewide issues.</p>
+              <p class="text__para">Our nonprofit newsroom depends on your support!</p>
+            </div>
           </div>
 
-           <div class="form__contact-group">
-            <label class="form__contact-label" for="email">Email</label>
-            <input class="form__contact-input" type="email" id="email" required aria-required="true">
+          <form class="form" action="" method="post" id="form" role="form">
+            <p class="form__intro" id="form-intro">I would like to give</p>
+            <fieldset class="form__fieldset" aria-describedby="form-intro">
+              <ul class="form__amounts" id="amounts-list">
+                <li class="form__amount--set">
+                  <input class="form__amount-radio" type="radio" id="amount-1" value="4" name="amount">
+                  <label class="form__amount-label" for="amount-1">&#36;4</label>
+                </li>
+
+                <li class="form__amount--set">
+                  <input class="form__amount-radio" type="radio" id="amount-2" value="9" name="amount" checked>
+                  <label class="form__amount-label" for="amount-2">&#36;9</label>
+                </li>
+
+                <li class="form__amount--set">
+                  <input class="form__amount-radio" type="radio" id="amount-3" value="17" name="amount">
+                  <label class="form__amount-label" for="amount-3">&#36;17</label>
+                </li>
+
+                <li class="form__amount--set">
+                  <input class="form__amount-radio" type="radio" id="amount-4" value="31" name="amount">
+                  <label class="form__amount-label" for="amount-4">&#36;31</label>
+                </li>
+
+                <li class="form__amount--set">
+                  <input class="form__amount-radio" type="radio" id="amount-5" value="63" name="amount">
+                  <label class="form__amount-label" for="amount-5">&#36;63</label>
+                </li>
+
+                <li class="form__amount--manual">
+                  <input class="form__amount-radio" type="radio" name="amount" id="manual-radio">
+                  <input class="form__amount-input" type="number" id="manual-entry" placeholder="&#36;100.00">
+                </li>
+              </ul>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <ul class="form__frequencies">
+                <li class="form__frequency">
+                  <button class="form__frequency-button" data-frequency="annual" aria-label="Give annually">Annually</button>
+                </li>
+
+                <li class="form__frequency">
+                  <button class="form__frequency-button selected" data-frequency="monthly" aria-label="Give monthly">Monthly</button>
+                </li>
+
+                <li class="form__frequency">
+                  <button class="form__frequency-button" data-frequency="once" aria-label="Give once">One Time</button>
+                </li>
+              </ul>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <div class="form__contact-group">
+                <label class="form__contact-label" for="name">Name</label>
+                <input class="form__contact-input" type="text" id="donator-name" required aria-required="true">
+              </div>
+
+               <div class="form__contact-group">
+                <label class="form__contact-label" for="email">Email</label>
+                <input class="form__contact-input" type="email" id="email" required aria-required="true">
+              </div>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <input class="form__submit" type="submit" id="submit">
+            </fieldset>
+
+            <p class="form__error" id="form-error"></p>
+          </form>
           </div>
-        </fieldset>
+      </main>
+    </div>
 
-        <fieldset class="form__fieldset">
-          <input class="form__submit" type="submit" id="submit">
-        </fieldset>
-
-        <p class="form__error" id="form-error"></p>
-      </form>
-    </main>
-
-     <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/templates.js"></script>
     <script src="assets/js/scripts.min.js"></script>
 

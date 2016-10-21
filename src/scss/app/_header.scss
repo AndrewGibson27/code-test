@@ -1,0 +1,36 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: $color-white-pure;
+	box-shadow: 0px 3px 5px 0px rgba(211, 211, 211, 0.75);
+
+	@include mq($from: tablet-min) {
+		box-shadow: none;
+	}
+
+	@include mq($from: desktop-min) {
+		height: 100px;
+	}
+}
+
+	.header__inner {
+		box-sizing: border-box;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+		padding: 0 15px;
+		max-width: 1280px;
+		margin: 0 auto;
+
+		@include mq($from: desktop-min) {
+			padding: 0 50px;
+		}
+	}
+
+@import 'logo';
+@import 'nav';

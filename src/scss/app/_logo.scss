@@ -1,0 +1,17 @@
+.logo {
+
+}
+
+	.logo__link {
+		color: transparent;
+	}
+
+		.logo__file {
+			display: block;
+			max-width: 200px;
+			float: left;
+
+			@include mq($from: desktop-min) {
+				max-width: 300px;
+			}
+		}

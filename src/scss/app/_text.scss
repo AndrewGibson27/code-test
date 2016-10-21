@@ -1,0 +1,49 @@
+.text {
+	box-sizing: border-box;
+	padding: 10px 15px 0 15px;
+
+	@include mq($from: tablet-min) {
+		margin-right: 20px;
+		float: left;
+		padding: 20px;
+		background: rgba(0,0,0,.6);
+	}
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		width: calc(50% - 20px);
+	}
+
+	@include mq($from: desktop-min) {
+		width: 400px;
+	}
+}
+
+	.text__heading {
+		font-family: $font-serif;
+		color: $color-black-pure;
+		margin: 0;
+		padding-bottom: 3px;
+		border-bottom: 2px solid $color-yellow-tribune;
+
+		@include mq($from: tablet-min) {
+			color: $color-white-pure;
+		}
+	}
+
+	.text__content {
+		margin-top: 10px;
+	}
+
+		.text__para {
+			font-family: $font-sansserif;
+			color: $color-gray-dark;
+			margin-top: 15px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			@include mq($from: tablet-min) {
+				color: $color-gray-light;
+			}
+		}
