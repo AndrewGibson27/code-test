@@ -2,10 +2,22 @@
 	display: block;
 	max-width: 1440px;
 	margin: 0 auto;
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		background-image: url(../../../assets/img/support-us-bg-image.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
 }
 
 	.main__inner {
+		@extend .clear;
 
+		@include mq($from: tablet-min, $until: desktop-min) {
+			max-width: 720px;
+			margin: 0 auto;
+			padding: 5% 0;
+		}
 	}
 
 @import 'form';

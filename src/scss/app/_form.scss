@@ -5,6 +5,14 @@
 	background-color: $color-white-off;
 	margin-top: 20px;
 	padding: 10px 15px;
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		width: 50%;
+		float: right;
+		margin-top: 0;
+		padding: 15px;
+		border-radius: 2px;
+	}
 }
 
 	.form__intro {

@@ -6,6 +6,10 @@
 	height: 50px;
 	background-color: $color-white-pure;
 	box-shadow: 0px 3px 5px 0px rgba(211, 211, 211, 0.75);
+
+	@include mq($from: tablet-min, $until: desktop-min) {
+		box-shadow: none;
+	}
 }
 
 	.header__inner {
