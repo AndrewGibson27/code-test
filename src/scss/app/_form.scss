@@ -159,5 +159,13 @@
 		}
 
 	.form__error {
+	  font-family: $font-sansserif;
+	  font-size: $font-s;
+	  font-weight: bold;
+	  color: #db1717;
+	  margin-top: 10px;
 
+	  &.hidden {
+	    display: none;
+	  }
 	}

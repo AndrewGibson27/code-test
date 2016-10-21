@@ -161,6 +161,18 @@
       selectedRadio = el;
     };
 
+    // Toggle error message visibility based on form validity
+    var _updateErrorMesssageVisiblity = function(state){
+      var currClass = formError.className;
+
+      if (state === 'show') {
+        formError.className = currClass.replace('hidden', '');
+
+      } else if (state === 'hide') {
+        formError.className = currClass + ' hidden';
+      }
+    };
+
 
 
 
@@ -189,6 +201,9 @@
       // If it failed either of the two tests, do not log value and instead show an error message
       if (!valid) {
         _showErrorMessage(errorText);
+        _updateErrorMesssageVisiblity('show');
+      } else {
+        _updateErrorMesssageVisiblity('hide');
       }
 
       // Return Boolean
