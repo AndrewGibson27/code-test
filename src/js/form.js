@@ -5,7 +5,7 @@
   // This is good practice because it protects variables from other pieces that might be later added to page
   var formHandler = function(){
     /*
-     * Initial variables, including DOM selections
+     * Initial variables, including DOM selections we want to cache
      */
 
     var handlebarsAttach = document.getElementById('amounts-list'),
@@ -139,7 +139,7 @@
 
 
     /*
-     * DOM
+     * DOM stuff
      */
 
     // When a donation frequency with new values is selected, use Handlebars to show new markup
@@ -177,7 +177,7 @@
 
 
     /*
-     * DOM
+     * Form validation
      */
 
     // Check if form has valid data
