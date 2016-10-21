@@ -211,7 +211,9 @@
 
       for (var i = 0; i < emailSuffixes.length; i++) {
         containsSuffix = emailTrimmed.indexOf( emailSuffixes[i] ) === -1 ? false : true;
-        if (containsSuffix) break;
+        if (containsSuffix) {
+          break;
+        }
       }
 
       // Validate email
