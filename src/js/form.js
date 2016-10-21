@@ -166,7 +166,7 @@
       var currClass = formError.className;
 
       if (state === 'show') {
-        formError.className = currClass.replace('hidden', '');
+        formError.className = currClass.replace(/hidden/g, '');
 
       } else if (state === 'hide') {
         formError.className = currClass + ' hidden';
@@ -183,7 +183,8 @@
     // Check if form has valid data
     var _checkFormValidity = function(){
       var errorText = '',
-        valid = true;
+        valid = true,
+        emailTrimmed = email.value.trim();
 
       // If currentValue is not numeric or if it's empty, raise an error on the invalid form element (won't work on Safari, ugh)
       if ( isNaN(currValue) || currValue.trim() === '' ) {
@@ -193,8 +194,29 @@
       }
       // If user did not enter name or email
       // These elements are marked as required, but Safari doesn't care about that
-      if ( email.value.trim() === '' || donatorName.value.trim() === '' ) {
-        errorText += ' Please enter a valid name and email address';
+      if ( donatorName.value.trim() === '' ) {
+        errorText += ' Please enter your name.';
+        valid = false;
+      }
+
+      var emailSuffixes = [
+        '.com',
+        '.org',
+        '.gov',
+        '.net',
+        '.edu',
+        '.mil'
+      ];
+      var containsSuffix = false;
+
+      for (var i = 0; i < emailSuffixes.length; i++) {
+        containsSuffix = emailTrimmed.indexOf( emailSuffixes[i] ) === -1 ? false : true;
+        if (containsSuffix) break;
+      }
+
+      // Validate email
+      if ( emailTrimmed.indexOf('@') === -1 || !containsSuffix || emailTrimmed === '') {
+        errorText += ' Please enter a valid email address.';
         valid = false;
       }
 
