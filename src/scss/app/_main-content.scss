@@ -1,6 +1,12 @@
 .main {
-
+	display: block;
+	max-width: 1440px;
+	margin: 0 auto;
 }
+
+	.main__inner {
+
+	}
 
 @import 'form';
 @import 'text';
