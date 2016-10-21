@@ -46,8 +46,10 @@
           </div>
 
           <form class="form" action="" method="post" id="form" role="form">
+            <p class="form__error hidden" id="form-error"></p>
             <p class="form__intro" id="form-intro">I would like to give</p>
-            <fieldset class="form__fieldset" aria-describedby="form-intro">
+
+            <fieldset class="form__fieldset" aria-describedby="form-intro form-error">
               <ul class="form__amounts" id="amounts-list">
                 <li class="form__amount--set">
                   <input class="form__amount-radio" type="radio" id="amount-1" value="4" name="amount">
@@ -112,8 +114,6 @@
             <fieldset class="form__fieldset">
               <input class="form__submit" type="submit" id="submit" value="Submit">
             </fieldset>
-
-            <p class="form__error hidden" id="form-error">This is an error.</p>
           </form>
           </div>
       </main>
