@@ -2,10 +2,6 @@
 // CONFIG MODULES
 //----------------------------------*/
 
-.container {
-  margin-top: 50px;
-}
-
 @import 'modules/breakpoints';
 @import 'modules/clearfix';
 @import 'modules/reset';
@@ -13,5 +9,6 @@
 @import 'modules/colors';
 @import 'modules/buttons';
 @import 'modules/typography';
+@import 'app/container';
 @import 'app/header';
 @import 'app/main-content';
